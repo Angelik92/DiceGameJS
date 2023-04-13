@@ -3,9 +3,9 @@
 const player0 = document.querySelector('.player0');
 const player1 = document.querySelector('.player1');
 const score0 = document.querySelector('#score0');
-const score1 = document.getElementById('#score1');
-const current0 = document.getElementById('#current0');
-const current1 = document.getElementById('#current1');
+const score1 = document.querySelector('#score1');
+const current0 = document.querySelector('#current0');
+const current1 = document.querySelector('#current1');
 const diceImg = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn_new');
 const btnRoll = document.querySelector('.btn_roll');
@@ -16,7 +16,7 @@ let currentscore = 0;
 let activePlayer = 0;
 let playing = true;
 
-const switchPlayer = function () {
+const switchPlayer = () => {
     currentscore = 0;
     document.getElementById(`current${activePlayer}`).textContent = currentscore;
     activePlayer = activePlayer == 0 ? 1 : 0;
@@ -59,12 +59,12 @@ btnHold.addEventListener('click', function () {
 });
 
 btnNew.addEventListener('click', function () {
-playing = true;
-stopAnimation();
+    playing = true;
+    stopAnimation();
     document.querySelector(`.player${activePlayer}`)
-activePlayer = 0;
-scores[0] = 0;
-scores[1] = 0;
+    activePlayer = 0;
+    scores[0] = 0;
+    scores[1] = 0;
     document.getElementById('score0').textContent = 0;
     document.getElementById('score1').textContent = 0;
 });
@@ -76,19 +76,19 @@ function getRandomArbitrary(min, max) {
 }
 
 function setAnimationWin(){
-    let animateDiv = document.getElementById("allconfetis");
+    let animateDiv = document.getElementById("allConfettis");
     for(let i = 0; i<100; i++){
-        let confeti = document.createElement("div");
-        confeti.classList.add("confetti");
-        confeti.style.left = getRandomArbitrary(0,100)+'%';
-        confeti.style.animationDelay = 50*i + 'ms';
-        confeti.style.backgroundColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-        animateDiv.appendChild(confeti);
+        let confetti = document.createElement("div");
+        confetti.classList.add("confetti");
+        confetti.style.left = getRandomArbitrary(0,100)+'%';
+        confetti.style.animationDelay = 50*i + 'ms';
+        confetti.style.backgroundColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+        animateDiv.appendChild(confetti);
     }
 }
 // Fonction fin de l'animation des confettis
 function stopAnimation(){
-    let animateDiv = document.getElementById("allconfetis");
+    let animateDiv = document.getElementById("allConfettis");
     animateDiv.innerHTML = "";
 }
 
@@ -99,4 +99,4 @@ function applause(){
     playWin.play();
 }
 
-// Javascript Created by Angélik, Marion, Arthur 😎 (pas ilan, car il est vilain)
+// Javascript Created by Angélik, Marion, Arthur 😎 
