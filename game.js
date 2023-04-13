@@ -43,9 +43,11 @@ btnHold.addEventListener('click', function () {
         scores[activePlayer] += currentscore;
         document.getElementById(`score${activePlayer}`).textContent = scores[activePlayer];
 
-        if (scores[activePlayer] >= 100) {
+        if (scores[activePlayer] >= 10) {
             playing = false;
             document.getElementById(`score${activePlayer}`).textContent = 'Win!';
+            setAnimationWin();
+            applause();
             switchPlayer();
             document.getElementById(`score${activePlayer}`).textContent = 'Lost!';
             active = activePlayer == 1 ? 0 : 1;
@@ -58,6 +60,7 @@ btnHold.addEventListener('click', function () {
 
 btnNew.addEventListener('click', function () {
 playing = true;
+stopAnimation();
     document.querySelector(`.player${activePlayer}`)
 activePlayer = 0;
 scores[0] = 0;
@@ -66,12 +69,34 @@ scores[1] = 0;
     document.getElementById('score1').textContent = 0;
 });
 
-// Creation des feu d'artifice a la victoire ? 
+// Creation des confettis a la victoire :
 
-// création de la modal pour les régles du jeu ? 
+function getRandomArbitrary(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
 
+function setAnimationWin(){
+    let animateDiv = document.getElementById("allconfetis");
+    for(let i = 0; i<100; i++){
+        let confeti = document.createElement("div");
+        confeti.classList.add("confetti");
+        confeti.style.left = getRandomArbitrary(0,100)+'%';
+        confeti.style.animationDelay = 50*i + 'ms';
+        confeti.style.backgroundColor = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
+        animateDiv.appendChild(confeti);
+    }
+}
+// Fonction fin de l'animation des confettis
+function stopAnimation(){
+    let animateDiv = document.getElementById("allconfetis");
+    animateDiv.innerHTML = "";
+}
 
-// Fin du jeux de dés !
+// Bruitage De Victoire
 
+function applause(){
+    let playWin = document.getElementById('bruitage')
+    playWin.play();
+}
 
-// Javascript Created by Angélik, Marion, Arthur 😎
+// Javascript Created by Angélik, Marion, Arthur 😎 (pas ilan, car il est vilain)
