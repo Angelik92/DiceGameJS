@@ -8,43 +8,47 @@
     <link rel="icon" type="image" href="assets\Images\icons8-dé-dotted-16.png">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    
+
+<body>    
     <main>
-        <!--Les conféttis -->
+        <!--Les confettis -->
         <div id="allConfettis">
-            </div>
+        </div>
         <!--Bruitage Victoire-->
         <audio id="bruitage" src="assets/audio/applaudissements.wav"></audio>
 
-        <!--Section Joueur 1 -->
-        <section class="player player0">
-            <h2 class="name" id="player_name0">Player 1</h2>
-            <p class="score" id="score0">43</p>
-            <div class="current">
-                <p class="current_hold">Current Score</p>
-                <p class="current_score" id="current0">0</p>
-            </div>
-        </section>
+        <div class="game">
 
-        <!--Section Joueur 2 -->
-
-        <section class="player player1">
-            <h2 class="name" id="player_name1">Player 2</h2>
-            <p class="score" id="score1">24</p>
-            <div class="current">
-                <p class="current_hold">Current Score</p>
-                <p class="current_score" id="current1">0</p>
-            </div>
-        </section>
-
-        <!--Section Dés + Bouttons  -->
-
-        <img alt="Le dé" class="dice" src="assets\Images\dice-6.png"/>
-        <button class="btn btn_new">New game</button>
-        <button class="btn btn_roll">Roll dice</button>
-        <button class="btn btn_hold">Hold</button>
-    </main>
+            <!--Section Joueur 1 -->
+            <section class="player player0">
+                <h2 class="name" id="player_name0">Player 1</h2>
+                <p class="score" id="score0">0</p>
+                <div class="current">
+                    <p class="current_hold">Current Score</p>
+                    <p class="current_score" id="current0">0</p>
+                </div>
+            </section>
+            
+            <!--Section Dés + Bouttons  -->
+            <section class="button">
+                <button class="btn btn_new">New game</button>
+                <img alt="Le dé" class="dice" src="assets\Images\dice-6.png"/>
+                <button class="btn btn_roll">Roll dice</button>
+                <button class="btn btn_hold">Hold</button>
+            </section>
+            
+            <!--Section Joueur 2 -->
+            <section class="player player1">
+                <h2 class="name" id="player_name1">Player 2</h2>
+                <p class="score" id="score1">0</p>
+                <div class="current">
+                    <p class="current_hold">Current Score</p>
+                    <p class="current_score" id="current1">0</p>
+                </div>
+            </section>
+            
+        </div>
+        </main>
 <script src="game.js"></script>
 </body>
 </html>

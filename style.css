@@ -1,7 +1,67 @@
 body {
     background : linear-gradient(45deg, rgb(38, 38, 233), rgb(133, 45, 209));
     height: 100vh;
+    color: white;
+    font-size: 1.5rem;
 }
+h2{
+    font-size: 3rem;
+
+}
+
+.game{
+    width: 90vw;
+    height: 90vh;
+    margin: auto;
+    background-image: url(./assets/Images/fond.jpg);
+    background-position: center;
+    background-size: cover;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+}
+section{
+    text-align: center;
+}
+
+p{
+    font-size: 1,5rem;
+}
+
+section:nth-child(2){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 50vh;
+    
+}
+
+.btn{
+    background-color: transparent;
+    color: rgb(243, 88, 238);   
+    font-size: 1.5rem;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    border: 4px solid currentColor;
+    padding: 0.25em 1em;
+    border-radius: 10px;
+    text-shadow: 0 0 0.125em white, 0 0 0.45em rgb(243, 88, 238); 
+    box-shadow: 0 0 0.5em rgb(243, 88, 238); 
+}
+
+.btn:hover{
+    text-shadow: 0 0 0.125em rgb(243, 88, 238), 0 0 0.45em rgb(20, 69, 183);
+    box-shadow: 0 0 0.5em rgb(20, 69, 183);
+    background-color: transparent;
+    color: rgb(20, 69, 183);
+}
+
+.dice{
+    width: 150px;
+}
+
 
 #allConfettis{
     overflow: hidden;
