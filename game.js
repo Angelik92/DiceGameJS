@@ -1,5 +1,5 @@
-//Jeux de dés Javascript !
 
+//retrieve html nodes
 const player0 = document.querySelector('.player0');
 const player1 = document.querySelector('.player1');
 const score0 = document.querySelector('#score0');
@@ -10,23 +10,27 @@ const diceImg = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn_new');
 const btnRoll = document.querySelector('.btn_roll');
 const btnHold = document.querySelector('.btn_hold');
-const scores = [0, 0];
 
+let scores = [0, 0];
 let currentscore = 0;
 let activePlayer = 0;
+
 let playing = true;
 
+// function change player
 const switchPlayer = () => {
     currentscore = 0;
     document.getElementById(`current${activePlayer}`).textContent = currentscore;
     activePlayer = activePlayer == 0 ? 1 : 0;
+    player0.classList.toggle("actived");
+    player1.classList.toggle("actived");
 }; 
 
+// dice roll on click
 btnRoll.addEventListener('click', function () {
     if (playing) {
-        const dice = Math.floor(Math.random() * 6) + 1;
+        const dice = getRandomArbitrary(1, 6) 
         diceImg.src=`assets/Images/dice-${dice}.png`;
-        //console.log(dice);
         if (dice !== 1) {
             currentscore += dice;
             document.getElementById(`current${activePlayer}`).textContent = currentscore;
@@ -44,19 +48,25 @@ btnHold.addEventListener('click', function () {
         document.getElementById(`score${activePlayer}`).textContent = scores[activePlayer];
 
         if (scores[activePlayer] >= 10) {
-            playing = false;
-            document.getElementById(`score${activePlayer}`).textContent = 'Win!';
-            setAnimationWin();
-            applause();
-            switchPlayer();
-            document.getElementById(`score${activePlayer}`).textContent = 'Lost!';
+            playing = false;         
             active = activePlayer == 1 ? 0 : 1;
+            finishGame();
             
         } else {
             switchPlayer();
             }
     }
 });
+
+function finishGame(){
+    setAnimationWin();
+    applause();
+    switchPlayer();
+    document.getElementById(`score${activePlayer}`).textContent = 'Win!';
+    document.getElementById(`score${activePlayer}`).textContent = 'Lost!';
+    
+    
+}
 
 btnNew.addEventListener('click', function () {
     playing = true;
@@ -69,12 +79,10 @@ btnNew.addEventListener('click', function () {
     document.getElementById('score1').textContent = 0;
 });
 
-// Creation des confettis a la victoire :
 
-function getRandomArbitrary(min, max) {
-    return Math.floor(Math.random() * (max - min) + min);
-}
+//End game animation
 
+//Create function confetis
 function setAnimationWin(){
     let animateDiv = document.getElementById("allConfettis");
     for(let i = 0; i<100; i++){
