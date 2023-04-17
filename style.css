@@ -16,22 +16,29 @@ h2{
 
 /* modal */
 .modal-container{
-    display: none;
+    visibility: hidden;
     position: fixed;
     top: 0;
     height: 100vh;
     width: 100vw;
+    transition: visibility 0.4s;
 }
 
 .modal-container.active{
-    display: block;
+    visibility: visible;
 }
 
 .overlay{
+    opacity: 0;
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: #333333d3;
+    transition: opacity 0.4s 0.2s ease-out;
+}
+.modal-container.active .overlay{
+    opacity: 1;
+    transition: opacity 0.4s ease-out;
 }
 .modal{
     position: absolute;
@@ -46,6 +53,12 @@ h2{
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0 0 0.5em rgb(243, 88, 238);
+    transition: opacity 0.4s ease-out;
+}
+
+.modal-container.active .modal{
+    opacity: 1;
+    transition: opacity 0.4s ease-out;
 }
 
 .modal h1{
