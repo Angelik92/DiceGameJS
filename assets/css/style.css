@@ -1,0 +1,24 @@
+.btn {
+  background-color: transparent;
+  color: rgb(243, 88, 238);
+  font-size: 1.5rem;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border: 4px solid currentColor;
+  padding: 0.25em 1em;
+  border-radius: 10px;
+  text-shadow: 0 0 0.125em rgb(255, 255, 255), 0 0 0.45em rgb(243, 88, 238);
+  box-shadow: 0 0 0.5em rgb(243, 88, 238);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-size: 1.5rem;
+}/*# sourceMappingURL=style.css.map */
