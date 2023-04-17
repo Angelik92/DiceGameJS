@@ -9,15 +9,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>    
+<body>   
     <main>
+    
+    <!--Modal  -->
         <!--Les confettis -->
         <div id="allConfettis">
         </div>
         <!--Bruitage Victoire-->
         <audio id="bruitage" src="assets/audio/applaudissements.wav"></audio>
-
+        
         <div class="game">
+            <section class="modal-container">
+                <div class="overlay modal-trigger"></div>
+                <div class="modal">
+                    <button class="btn close-modal modal-trigger">X</button>
+                    <h1>Règles de jeu</h1>
+                    <p>Le jeu comprend 2 joueurs sur un seul et même écran.
+                        Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL). À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite. Le résultat d’un lancer est ajouté au ROUND.
+                    </p>
+                    <p>
+                        Lors de son tour, le joueur peut décider à tout moment de:
+                        <ul>
+                            <li>Cliquer sur HOLD, qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le tour de l’autre joueur.</li>
+                            <li>Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour. Le premier joueur qui atteint les 100 points sur global gagne le jeu.</li>
+                        </ul>
+                    </p>
+                </div>
+            </section>
 
             <!--Section Joueur 1 -->
             <section class="player player0 actived">
@@ -31,10 +50,15 @@
             
             <!--Section Dés + Bouttons  -->
             <section class="button">
-                <button class="btn btn_new">New game</button>
+                <div>
+                    <button class="btn btn_new">New game</button>
+                    <button class="btn modal-trigger">Rules</button>
+                </div>
                 <img alt="Le dé" class="dice" src="assets\Images\dice-6.png"/>
-                <button class="btn btn_roll">Roll dice</button>
-                <button class="btn btn_hold">Hold</button>
+                <div>
+                    <button class="btn btn_roll">Roll dice</button>
+                    <button class="btn btn_hold">Hold</button>
+                </div>
             </section>
             
             <!--Section Joueur 2 -->
@@ -46,10 +70,11 @@
                     <p class="current_score" id="current1">0</p>
                 </div>
             </section>
-            
         </div>
         </main>
+
 <script src="utilities.js"></script>
+<script src="modal.js"></script>
 <script src="game.js"></script>
 </body>
 </html>
