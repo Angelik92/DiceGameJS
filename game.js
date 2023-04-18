@@ -103,7 +103,7 @@ function stopAnimation(){
 // Bruitage De Victoire
 
 function applause(){
-    let playWin = document.getElementById('bruitage')
+    let playWin = document.getElementById('soundApplause')
     playWin.play();
 }
 

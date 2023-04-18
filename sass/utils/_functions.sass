@@ -1,0 +1,5 @@
+// conversion px in rem
+@function pixelToRem($value)
+    $remValue: ($value * 1) / 16
+    $remValueCeil: ceil($remValue)
+    @return #{$remValueCeil}rem

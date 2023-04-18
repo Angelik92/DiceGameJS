@@ -1,0 +1,9 @@
+@use "../utils/_mains" as utils
+
+.dice-buttons
+    @include utils.flex(space-evenly, center, column)
+    height: 50vh
+
+    &_group
+        width: 25vw
+        @include utils.flex(space-between, center)

@@ -1,3 +1,8 @@
+.actived {
+  text-shadow: 0 0 0.125em rgb(255, 255, 255), 0 0 0.4em rgb(243, 88, 238);
+  transform: scale(1.2);
+}
+
 .btn {
   background-color: transparent;
   color: rgb(243, 88, 238);
@@ -11,6 +16,37 @@
   text-shadow: 0 0 0.125em rgb(255, 255, 255), 0 0 0.45em rgb(243, 88, 238);
   box-shadow: 0 0 0.5em rgb(243, 88, 238);
 }
+.btn:hover {
+  text-shadow: 0 0 0.125em rgb(243, 88, 238), 0 0 0.45em rgb(20, 69, 184);
+  box-shadow: 0 0 0.5em rgb(20, 69, 184);
+  background-color: transparent;
+  color: rgb(20, 69, 184);
+}
+.btn_close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.dice {
+  width: 10rem;
+  border-radius: 20px;
+}
+
+.confetti {
+  width: 10px;
+  height: 20px;
+  animation: 3s infinite linear falling;
+  position: absolute;
+  top: -20px;
+  z-index: 2;
+}
+
+#allConfettis {
+  overflow: hidden;
+}
 
 * {
   margin: 0;
@@ -21,4 +57,125 @@
 body {
   height: 100vh;
   font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+.game {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  background-image: url("/assets/Images/fond.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.modal-container {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  transition: visibility 0.4s;
+}
+
+.active {
+  visibility: visible;
+}
+
+.overlay {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(38, 38, 233, 0.422);
+  transition: opacity 0.4s 0.2s ease-out;
+}
+
+.modal-container.active .overlay,
+.modal-container.active .modal {
+  opacity: 1;
+  transition: opacity 0.4s ease-out;
+}
+
+.modal {
+  position: absolute;
+  width: 95%;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 30px;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0.5em rgb(243, 88, 238);
+  transition: opacity 0.4s ease-out;
+}
+.modal h1 {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.dice-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+}
+.dice-buttons_group {
+  width: 25vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.player {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.406);
+  height: 30%;
+  line-height: 2em;
+}
+.player_current {
+  margin-top: 50px;
+}
+
+@keyframes falling {
+  0% {
+    top: -20px;
+    transform: rotate(180deg);
+  }
+  20% {
+    transform: translateX(100px);
+    transform: rotate(360deg);
+  }
+  40% {
+    transform: translateX(60px);
+    transform: rotate(180deg);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(20px);
+    transform: rotate(360deg);
+  }
+  70% {
+    opacity: 0.2;
+    transform: translateX(30px);
+    transform: rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    top: 95%;
+    transform: translateX(20px);
+    transform: rotate(360deg);
+  }
 }/*# sourceMappingURL=style.css.map */
