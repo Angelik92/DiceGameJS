@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,7 +38,7 @@
                             Lors de son tour, le joueur peut décider à tout moment de:
                             <ul>
                                 <li>Cliquer sur HOLD, qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le tour de l’autre joueur.</li>
-                                <li>Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour. Le premier joueur qui atteint les 100 points sur global gagne le jeu.</li>
+                                <li>Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour. Le premier joueur qui atteint les 20 points sur global gagne le jeu.</li>
                             </ul>
                         </p>
                     </div>
@@ -46,10 +46,10 @@
 
                 <!--Section Player 1 -->
                 <section class="player player0 actived">
-                    <h2 class="name" id="player_name0">Player 1</h2>
+                    <h2 class="name" id="player_name0">Joueur 1</h2>
                     <p class="score" id="score0">0</p>
                     <div class="player_current">
-                        <p class="current_hold">Current Score</p>
+                        <p class="current_hold">Score de votre tour</p>
                         <p class="current_score" id="current0">0</p>
                     </div>
                 </section>
@@ -57,22 +57,22 @@
                 <!--Section dice + Bouttons  -->
                 <section class="dice-buttons">
                     <div class="dice-buttons_group">
-                        <button class="btn btn_new">New game</button>
-                        <button class="btn modal-trigger">Rules</button>
+                        <button class="btn btn_new">Nouveau jeu</button>
+                        <button class="btn modal-trigger">Règles</button>
                     </div>
                     <img alt="Le dé" class="dice" src="assets\Images\dice-6.png"/>
                     <div class="dice-buttons_group">
-                        <button class="btn btn_roll">Roll dice</button>
-                        <button class="btn btn_hold">Hold</button>
+                        <button class="btn btn_roll">Lancer le dé</button>
+                        <button class="btn btn_hold">Passez la main</button>
                     </div>
                 </section>
                 
                 <!--Section Gamer 2 -->
                 <section class="player player1">
-                    <h2 class="name" id="player_name1">Player 2</h2>
+                    <h2 class="name" id="player_name1">Joueur 2</h2>
                     <p class="score" id="score1">0</p>
                     <div class="player_current">
-                        <p class="current_hold">Current Score</p>
+                        <p class="current_hold">Score de votre tour</p>
                         <p class="current_score" id="current1">0</p>
                     </div>
                 </section>

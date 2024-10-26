@@ -14,7 +14,7 @@
     box-shadow: 0 0 0.5em utils.$pink
 
     &:hover
-        text-shadow: 0 0 0.125em utils.$pink, 0 0 0.45em utils.$blue
+        @include utils.textShadow(pink, blue)
         box-shadow: 0 0 0.5em utils.$blue
         background-color: transparent
         color: utils.$blue
